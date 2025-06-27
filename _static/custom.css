@@ -1,0 +1,11 @@
+/* Make all figure captions smaller */
+figcaption {
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Make the source even smaller */
+figcaption small {
+    font-size: 0.65rem;
+    color: #555; /* optional: a lighter tone */
+}
