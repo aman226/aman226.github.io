@@ -1,5 +1,5 @@
 # Welcome to *Sonic Frontiers*
-*Sonic Frontiers* is a self-directed, academically rigorous exploration into the physics and control of high-speed flight. This work is motivated by my desire to build a deep and principled understanding of the aerodynamic, propulsion, and control phenomena that govern aerospace systems operating in extreme regimes. Wherever possible, the exposition is reinforced with numerical methods, practical insights, and reproducible examples.
+*Sonic Frontiers* is a self-directed, academically rigorous exploration into the physics and control of high-speed flight. It is motivated by my desire to build a deep and principled understanding of the aerodynamic, propulsion, and control phenomena that govern aerospace systems operating in extreme regimes. Wherever possible, the exposition is reinforced with numerical methods, practical insights, and reproducible examples.
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3e/Inlet_shock_waves_at_Mach_2.jpg
 :name: fig-start-unstart-nasa

@@ -1,64 +1,22 @@
-# Chapter 1: Introduction to High-Speed Flows
+# Chapter 1: Introduction to Supersonic Flows
+On October 14, 1947, U.S. Air Force Captain **Chuck Yeager** became the first human to fly faster than the speed of sound. Piloting the rocket-powered **Bell X-1**, Yeager accelerated past Mach 1 (greater than speed of sound) in level flight at an altitude of approximately 45,000 feet, a feat previously considered unattainable due to the mysterious and often destructive behavior of aircraft near the so-called “sound barrier.”
 
-High-speed aerodynamic flows form the basis of modern aerospace systems operating at transonic, supersonic, and hypersonic speeds. These flows are governed by the principles of compressible fluid dynamics, where variations in pressure, density, and temperature are intrinsically linked to the flow velocity. The fundamental non-dimensional parameter used to classify compressible flow regimes is the **Mach number (M)**:
+The flight of the X-1 was a big milestone in human aviation and a crucial experimental validation of what we now understand as the **transonic regime**, which is a narrow Mach range in which both subsonic and supersonic flow features coexist. The challenges encountered in this regime, such as rapid changes in pressure distribution, shock formation, and control instability, demanded both experimental and a deep theoretical framework that was still in early development at the time.
 
-$M = \frac{u}{a}$
+Today, the field of **high-speed aerodynamics** encompasses well established regimes: **subsonic**, **transonic**, **supersonic**, and **hypersonic**, each governed by distinct flow physics and mathematical behavior. Understanding these regimes is essential not just for aircraft design, but also for propulsion systems, control logic, and atmospheric re-entry modeling.
 
-where:
-- $u$ is the local flow velocity, and
-- $a$ is the local speed of sound in the medium.
+```{figure} https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg
+:name: fig-bell-x1
+:width: 80%
+:align: center
 
----
+The Bell X-1 in flight during testing circa 1947. This aircraft, flown by Chuck Yeager, became the first piloted vehicle to exceed Mach 1 in level flight.  
+<small>Photograph: NASA Langley Research Center. Aircraft registration: 46-062.</small>
+```
 
-## 1.1 Flow Regimes Based on Mach Number
+What makes supersonic flows so fascinating? Why do aircraft behave so differently when they start approaching or exceeding the speed of sound? And what exactly changes in the air around them when that happens?
 
-The Mach number determines the qualitative behavior of a flow field and its interaction with surrounding geometry. Compressible flow regimes are classified as follows:
+At relatively low speeds, air moves predictably, almost gently, around an aircraft. But as speed increases, everything begins to change. Waves of pressure stop moving ahead of the aircraft and start bunching up around it. Sudden jumps in pressure and temperature appear in the air. These invisible changes can cause aircraft to shake, lose stability, or even become uncontrollable, unless they're carefully designed to handle it. At high speeds, even small changes in design or control surfaces can lead to drastically different outcomes. Pilots in early supersonic test flights experienced this firsthand, often without warning, and engineers had to figure out why.
 
-### Subsonic Flow ($M < 1$)
-- Pressure disturbances can propagate upstream.
-- For $M < 0.3$, compressibility is negligible.
-- Governing equations are elliptic in nature.
-- Typically smooth and predictable flow.
+Understanding supersonic flows is essential for designing vehicles that remain stable and controllable under rapidly changing aerodynamic forces. It allows engineers to shape air intakes that keep engines operating at high speeds, and to anticipate the phenomenon that can affect lift, drag, and control. When air begins to behave differently; compressing, heating, and forming discontinuities, designs must account for these changes. Without this understanding, vehicles may become inefficient, unstable, or even unsafe when approaching or exceeding the speed of sound.
 
-### Transonic Flow ($0.8 < M < 1.2$)
-- Contains both subsonic and supersonic zones.
-- Local shock waves and flow separation are common.
-- Highly sensitive to geometry and operating conditions.
-- Mixed-type governing equations (elliptic + hyperbolic).
-
-### Supersonic Flow ($M > 1$)
-- Disturbances cannot propagate upstream.
-- Shock waves and expansion fans dominate flow structure.
-- Governing equations are hyperbolic.
-- Strong compressibility effects present.
-
-### Hypersonic Flow ($M > 5$)
-- Exhibits strong shock–boundary layer interactions.
-- Significant high-temperature effects:
-  - Vibrational excitation
-  - Molecular dissociation
-  - Chemical reactions
-- Requires thermochemical and viscous modeling.
-
----
-
-## 1.2 Flow Regime Summary
-
-```{list-table} Flow Regimes by Mach Number
-:header-rows: 1
-
-* - Regime
-  - Mach Number
-  - Key Characteristics
-* - Subsonic
-  - $M < 1$
-  - No shocks, upstream communication, low compressibility
-* - Transonic
-  - $0.8 < M < 1.2$
-  - Local shocks, sensitivity, mixed-type PDEs
-* - Supersonic
-  - $M > 1$
-  - Shock waves, expansion fans, hyperbolic behavior
-* - Hypersonic
-  - $M > 5$
-  - Strong shocks, high-temperature effects, real-gas physics

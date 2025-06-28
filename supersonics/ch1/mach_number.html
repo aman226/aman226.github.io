@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapter 1: Introduction to Supersonic Flows &#8212; Sonic Frontiers</title>
+    <title>1.2 Mach Number and Compressibility &#8212; Sonic Frontiers</title>
   
   
   
@@ -60,11 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'supersonics/ch1/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'supersonics/ch1/mach_number';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.1 Compressible Flows" href="compressible.html" />
-    <link rel="prev" title="Welcome to Sonic Frontiers" href="../../intro.html" />
+    <link rel="next" title="1.3 Flow Regimes Based on Mach Number" href="flow_regimes.html" />
+    <link rel="prev" title="1.1 Compressible Flows" href="compressible.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,9 +176,9 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supersonics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chapter 1: Introduction to Supersonic Flows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Chapter 1: Introduction to Supersonic Flows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="compressible.html">1.1 Compressible Flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mach_number.html">1.2 Mach Number and Compressibility</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Mach Number and Compressibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flow_regimes.html">1.3 Flow Regimes Based on Mach Number</a></li>
 </ul>
 </details></li>
@@ -236,7 +236,7 @@
       
       
       
-      <li><a href="../../_sources/supersonics/ch1/intro.md" target="_blank"
+      <li><a href="../../_sources/supersonics/ch1/mach_number.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -318,11 +320,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 1: Introduction to Supersonic Flows</h1>
+    <h1>1.2 Mach Number and Compressibility</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-mach-number"><strong>What is the Mach Number?</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speed-of-sound-in-a-gas"><strong>Speed of Sound in a Gas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-number-and-density-changes"><strong>Mach Number and Density Changes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-mach-number-matter-for-compressibility"><strong>Why Does the Mach Number Matter for Compressibility?</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -332,24 +345,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-introduction-to-supersonic-flows">
-<h1>Chapter 1: Introduction to Supersonic Flows<a class="headerlink" href="#chapter-1-introduction-to-supersonic-flows" title="Link to this heading">#</a></h1>
-<p>On October 14, 1947, U.S. Air Force Captain <strong>Chuck Yeager</strong> became the first human to fly faster than the speed of sound. Piloting the rocket-powered <strong>Bell X-1</strong>, Yeager accelerated past Mach 1 (greater than speed of sound) in level flight at an altitude of approximately 45,000 feet, a feat previously considered unattainable due to the mysterious and often destructive behavior of aircraft near the so-called “sound barrier.”</p>
-<p>The flight of the X-1 was a big milestone in human aviation and a crucial experimental validation of what we now understand as the <strong>transonic regime</strong>, which is a narrow Mach range in which both subsonic and supersonic flow features coexist. The challenges encountered in this regime, such as rapid changes in pressure distribution, shock formation, and control instability, demanded both experimental and a deep theoretical framework that was still in early development at the time.</p>
-<p>Today, the field of <strong>high-speed aerodynamics</strong> encompasses well established regimes: <strong>subsonic</strong>, <strong>transonic</strong>, <strong>supersonic</strong>, and <strong>hypersonic</strong>, each governed by distinct flow physics and mathematical behavior. Understanding these regimes is essential not just for aircraft design, but also for propulsion systems, control logic, and atmospheric re-entry modeling.</p>
-<figure class="align-center" id="fig-bell-x1">
-<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The Bell X-1 in flight during testing circa 1947. This aircraft, flown by Chuck Yeager, became the first piloted vehicle to exceed Mach 1 in level flight.<br />
-<small>Photograph: NASA Langley Research Center. Aircraft registration: 46-062.</small></span><a class="headerlink" href="#fig-bell-x1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>What makes supersonic flows so fascinating? Why do aircraft behave so differently when they start approaching or exceeding the speed of sound? And what exactly changes in the air around them when that happens?</p>
-<p>At relatively low speeds, air moves predictably, almost gently, around an aircraft. But as speed increases, everything begins to change. Waves of pressure stop moving ahead of the aircraft and start bunching up around it. Sudden jumps in pressure and temperature appear in the air. These invisible changes can cause aircraft to shake, lose stability, or even become uncontrollable, unless they’re carefully designed to handle it. At high speeds, even small changes in design or control surfaces can lead to drastically different outcomes. Pilots in early supersonic test flights experienced this firsthand, often without warning, and engineers had to figure out why.</p>
-<p>Understanding supersonic flows is essential for designing vehicles that remain stable and controllable under rapidly changing aerodynamic forces. It allows engineers to shape air intakes that keep engines operating at high speeds, and to anticipate the phenomenon that can affect lift, drag, and control. When air begins to behave differently; compressing, heating, and forming discontinuities, designs must account for these changes. Without this understanding, vehicles may become inefficient, unstable, or even unsafe when approaching or exceeding the speed of sound.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="mach-number-and-compressibility">
+<h1>1.2 Mach Number and Compressibility<a class="headerlink" href="#mach-number-and-compressibility" title="Link to this heading">#</a></h1>
+<p>Although all fluids are, in principle, compressible, the extent to which compressibility affects a flow depends strongly on the flow conditions. In many practical situations, especially those involving low-speed motion, the changes in density are so small that they can be safely neglected. In contrast, high-speed flows often exhibit significant variations in density, pressure, and temperature, which must be captured accurately to model the physics correctly.</p>
+<p>The central question, then, is not whether a fluid can compress, but whether those compressibility effects are strong enough to influence the flow field. This leads us to the need for a systematic way to assess when compressibility can be ignored and when it must be retained.</p>
+<p>The key to this assessment lies in a non-dimensional parameter known as the <strong>Mach number</strong>. It compares the local flow speed to the speed at which pressure disturbances propagate through the medium. As we will see, the Mach number provides a quantitative criterion for determining the importance of compressibility effects, and helps delineate different flow regimes, from incompressible to supersonic and beyond.</p>
+<section id="what-is-the-mach-number">
+<h2><strong>What is the Mach Number?</strong><a class="headerlink" href="#what-is-the-mach-number" title="Link to this heading">#</a></h2>
+<p>The <strong>Mach number</strong> is defined as the ratio of the speed of a fluid flow to the speed of sound in that medium:</p>
+<div class="math notranslate nohighlight" id="equation-eq-mach-def">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-mach-def" title="Link to this equation">#</a></span>\[M = \frac{u}{a}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u \)</span> is the local flow velocity</p></li>
+<li><p><span class="math notranslate nohighlight">\( a \)</span> is the local speed of sound in the medium</p></li>
+</ul>
+<p>The Mach number tells us how quickly information (such as pressure disturbances) can travel through the fluid. When <span class="math notranslate nohighlight">\( M &lt; 1 \)</span>, the flow is <strong>subsonic</strong>, and disturbances can propagate upstream. When <span class="math notranslate nohighlight">\( M &gt; 1 \)</span>, the flow is <strong>supersonic</strong>, and disturbances are confined downstream.</p>
+</section>
+<section id="speed-of-sound-in-a-gas">
+<h2><strong>Speed of Sound in a Gas</strong><a class="headerlink" href="#speed-of-sound-in-a-gas" title="Link to this heading">#</a></h2>
+<p>The speed of sound represents the velocity at which small pressure disturbances move through a medium. In thermodynamics, it is defined as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-sos">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-sos" title="Link to this equation">#</a></span>\[a = \sqrt{ \left( \frac{\partial p}{\partial \rho} \right)_s }\]</div>
+<p>This is the square root of the rate of change of pressure with respect to density at constant entropy. For an ideal gas, this simplifies to:</p>
+<div class="math notranslate nohighlight" id="equation-eq-sos-ideal">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-sos-ideal" title="Link to this equation">#</a></span>\[a = \sqrt{\gamma R T}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \gamma \)</span> is the ratio of specific heats (<span class="math notranslate nohighlight">\( c_p / c_v \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\( R \)</span> is the specific gas constant</p></li>
+<li><p><span class="math notranslate nohighlight">\( T \)</span> is the absolute temperature</p></li>
+</ul>
+<p>Thus, the speed of sound depends only on the thermodynamic properties of the gas and its temperature.</p>
+</section>
+<section id="mach-number-and-density-changes">
+<h2><strong>Mach Number and Density Changes</strong><a class="headerlink" href="#mach-number-and-density-changes" title="Link to this heading">#</a></h2>
+<p>To understand how Mach number relates to compressibility, consider the 1D steady flow energy and continuity equations. From isentropic relations (valid for inviscid, adiabatic flows), the density change with respect to pressure in terms of Mach number is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-rho-vs-p">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-rho-vs-p" title="Link to this equation">#</a></span>\[\frac{d\rho}{\rho} = \frac{M^2}{1 - M^2} \cdot \frac{dp}{p}\]</div>
+<p>This shows that as Mach number increases, the relative change in density due to a pressure change becomes amplified. When <span class="math notranslate nohighlight">\( M \ll 1 \)</span>, the term <span class="math notranslate nohighlight">\( \frac{M^2}{1 - M^2} \)</span> is small, and density changes can often be neglected, hence the incompressible assumption is considered.</p>
+<p>However, as <span class="math notranslate nohighlight">\( M \to 1 \)</span>, this term grows rapidly, and compressibility can no longer be ignored.</p>
+</section>
+<section id="why-does-the-mach-number-matter-for-compressibility">
+<h2><strong>Why Does the Mach Number Matter for Compressibility?</strong><a class="headerlink" href="#why-does-the-mach-number-matter-for-compressibility" title="Link to this heading">#</a></h2>
+<p>To understand this, recall from thermodynamics that a flow is called <strong>compressible</strong> if pressure changes lead to significant changes in density.</p>
+<p>To see how the Mach number connects to this idea, we can examine how the density of a gas changes in response to pressure variations in a flow. Using isentropic relations (valid for inviscid, adiabatic flows), the density change due to a small pressure change can be written approximately as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-density-change-mach">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-density-change-mach" title="Link to this equation">#</a></span>\[\frac{\Delta \rho}{\rho} \approx \frac{1}{2} \gamma M^2\]</div>
+<p>This equation tells us that the fractional change in density increases with the square of the Mach number. It shows that <strong>as Mach number increases, compressibility effects become more significant</strong>.</p>
+<p>Let’s evaluate this expression for air (<span class="math notranslate nohighlight">\( \gamma = 1.4 \)</span>):</p>
+<ul class="simple">
+<li><p>At <span class="math notranslate nohighlight">\( M = 0.1 \)</span>, the density change is roughly 0.7%</p></li>
+<li><p>At <span class="math notranslate nohighlight">\( M = 0.3 \)</span>, it rises to nearly 6%</p></li>
+<li><p>At <span class="math notranslate nohighlight">\( M = 0.5 \)</span>, it exceeds 17%</p></li>
+</ul>
+<p>In engineering practice, a density change of less than 5% is often considered negligible. That is why we commonly treat flows as <strong>incompressible when <span class="math notranslate nohighlight">\( M &lt; 0.3 \)</span></strong>.</p>
+<blockquote>
+<div><p>Compressibility is not a property of the fluid alone, it emerges from the <strong>interaction between flow conditions and thermodynamic response</strong>. The Mach number captures this interaction with remarkable clarity.</p>
+</div></blockquote>
+<p>In the next section, we will explore how the Mach number helps us classify different flow regimes: subsonic, transonic, supersonic, and hypersonic.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -383,20 +438,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../intro.html"
+       href="compressible.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to <em>Sonic Frontiers</em></p>
+        <p class="prev-next-title">1.1 Compressible Flows</p>
       </div>
     </a>
     <a class="right-next"
-       href="compressible.html"
+       href="flow_regimes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.1 Compressible Flows</p>
+        <p class="prev-next-title">1.3 Flow Regimes Based on Mach Number</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -406,6 +461,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-mach-number"><strong>What is the Mach Number?</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speed-of-sound-in-a-gas"><strong>Speed of Sound in a Gas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-number-and-density-changes"><strong>Mach Number and Density Changes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-mach-number-matter-for-compressibility"><strong>Why Does the Mach Number Matter for Compressibility?</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

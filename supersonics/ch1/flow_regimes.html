@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapter 1: Introduction to Supersonic Flows &#8212; Sonic Frontiers</title>
+    <title>1.3 Flow Regimes Based on Mach Number &#8212; Sonic Frontiers</title>
   
   
   
@@ -60,11 +60,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'supersonics/ch1/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'supersonics/ch1/flow_regimes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.1 Compressible Flows" href="compressible.html" />
-    <link rel="prev" title="Welcome to Sonic Frontiers" href="../../intro.html" />
+    <link rel="prev" title="1.2 Mach Number and Compressibility" href="mach_number.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,10 +175,10 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supersonics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chapter 1: Introduction to Supersonic Flows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Chapter 1: Introduction to Supersonic Flows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="compressible.html">1.1 Compressible Flows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mach_number.html">1.2 Mach Number and Compressibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flow_regimes.html">1.3 Flow Regimes Based on Mach Number</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3 Flow Regimes Based on Mach Number</a></li>
 </ul>
 </details></li>
 </ul>
@@ -236,7 +235,7 @@
       
       
       
-      <li><a href="../../_sources/supersonics/ch1/intro.md" target="_blank"
+      <li><a href="../../_sources/supersonics/ch1/flow_regimes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 1: Introduction to Supersonic Flows</h1>
+    <h1>1.3 Flow Regimes Based on Mach Number</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -332,23 +331,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-introduction-to-supersonic-flows">
-<h1>Chapter 1: Introduction to Supersonic Flows<a class="headerlink" href="#chapter-1-introduction-to-supersonic-flows" title="Link to this heading">#</a></h1>
-<p>On October 14, 1947, U.S. Air Force Captain <strong>Chuck Yeager</strong> became the first human to fly faster than the speed of sound. Piloting the rocket-powered <strong>Bell X-1</strong>, Yeager accelerated past Mach 1 (greater than speed of sound) in level flight at an altitude of approximately 45,000 feet, a feat previously considered unattainable due to the mysterious and often destructive behavior of aircraft near the so-called “sound barrier.”</p>
-<p>The flight of the X-1 was a big milestone in human aviation and a crucial experimental validation of what we now understand as the <strong>transonic regime</strong>, which is a narrow Mach range in which both subsonic and supersonic flow features coexist. The challenges encountered in this regime, such as rapid changes in pressure distribution, shock formation, and control instability, demanded both experimental and a deep theoretical framework that was still in early development at the time.</p>
-<p>Today, the field of <strong>high-speed aerodynamics</strong> encompasses well established regimes: <strong>subsonic</strong>, <strong>transonic</strong>, <strong>supersonic</strong>, and <strong>hypersonic</strong>, each governed by distinct flow physics and mathematical behavior. Understanding these regimes is essential not just for aircraft design, but also for propulsion systems, control logic, and atmospheric re-entry modeling.</p>
-<figure class="align-center" id="fig-bell-x1">
-<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The Bell X-1 in flight during testing circa 1947. This aircraft, flown by Chuck Yeager, became the first piloted vehicle to exceed Mach 1 in level flight.<br />
-<small>Photograph: NASA Langley Research Center. Aircraft registration: 46-062.</small></span><a class="headerlink" href="#fig-bell-x1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>What makes supersonic flows so fascinating? Why do aircraft behave so differently when they start approaching or exceeding the speed of sound? And what exactly changes in the air around them when that happens?</p>
-<p>At relatively low speeds, air moves predictably, almost gently, around an aircraft. But as speed increases, everything begins to change. Waves of pressure stop moving ahead of the aircraft and start bunching up around it. Sudden jumps in pressure and temperature appear in the air. These invisible changes can cause aircraft to shake, lose stability, or even become uncontrollable, unless they’re carefully designed to handle it. At high speeds, even small changes in design or control surfaces can lead to drastically different outcomes. Pilots in early supersonic test flights experienced this firsthand, often without warning, and engineers had to figure out why.</p>
-<p>Understanding supersonic flows is essential for designing vehicles that remain stable and controllable under rapidly changing aerodynamic forces. It allows engineers to shape air intakes that keep engines operating at high speeds, and to anticipate the phenomenon that can affect lift, drag, and control. When air begins to behave differently; compressing, heating, and forming discontinuities, designs must account for these changes. Without this understanding, vehicles may become inefficient, unstable, or even unsafe when approaching or exceeding the speed of sound.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="flow-regimes-based-on-mach-number">
+<h1>1.3 Flow Regimes Based on Mach Number<a class="headerlink" href="#flow-regimes-based-on-mach-number" title="Link to this heading">#</a></h1>
+<p>The Mach number determines the qualitative behavior of a flow field and its interaction with surrounding geometry. Compressible flow regimes are classified as follows:</p>
+<p><strong>Subsonic Flow (<span class="math notranslate nohighlight">\(M &lt; 1\)</span>)</strong></p>
+<ul class="simple">
+<li><p>Pressure disturbances can propagate upstream.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(M &lt; 0.3\)</span>, compressibility is negligible.</p></li>
+<li><p>Governing equations are elliptic in nature.</p></li>
+<li><p>Typically smooth and predictable flow.</p></li>
+</ul>
+<p><strong>Transonic Flow (<span class="math notranslate nohighlight">\(0.8 &lt; M &lt; 1.2\)</span>)</strong></p>
+<ul class="simple">
+<li><p>Contains both subsonic and supersonic zones.</p></li>
+<li><p>Local shock waves and flow separation are common.</p></li>
+<li><p>Highly sensitive to geometry and operating conditions.</p></li>
+<li><p>Mixed-type governing equations (elliptic + hyperbolic).</p></li>
+</ul>
+<p><strong>Supersonic Flow (<span class="math notranslate nohighlight">\(M &gt; 1\)</span>)</strong></p>
+<ul class="simple">
+<li><p>Disturbances cannot propagate upstream.</p></li>
+<li><p>Shock waves and expansion fans dominate flow structure.</p></li>
+<li><p>Governing equations are hyperbolic.</p></li>
+<li><p>Strong compressibility effects present.</p></li>
+</ul>
+<p><strong>Hypersonic Flow (<span class="math notranslate nohighlight">\(M &gt; 5\)</span>)</strong></p>
+<ul class="simple">
+<li><p>Exhibits strong shock–boundary layer interactions.</p></li>
+<li><p>Significant high-temperature effects:</p>
+<ul>
+<li><p>Vibrational excitation</p></li>
+<li><p>Molecular dissociation</p></li>
+<li><p>Chemical reactions</p></li>
+</ul>
+</li>
+<li><p>Requires thermochemical and viscous modeling.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Flow Regime</strong></p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Flow Regimes by Mach Number</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Regime</p></th>
+<th class="head"><p>Mach Number</p></th>
+<th class="head"><p>Key Characteristics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Subsonic</p></td>
+<td><p><span class="math notranslate nohighlight">\(M &lt; 1\)</span></p></td>
+<td><p>No shocks, upstream communication, low compressibility</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transonic</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.8 &lt; M &lt; 1.2\)</span></p></td>
+<td><p>Local shocks, sensitivity, mixed-type PDEs</p></td>
+</tr>
+<tr class="row-even"><td><p>Supersonic</p></td>
+<td><p><span class="math notranslate nohighlight">\(M &gt; 1\)</span></p></td>
+<td><p>Shock waves, expansion fans, hyperbolic behavior</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hypersonic</p></td>
+<td><p><span class="math notranslate nohighlight">\(M &gt; 5\)</span></p></td>
+<td><p>Strong shocks, high-temperature effects, real-gas physics –&gt;</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 
@@ -383,22 +430,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../intro.html"
+       href="mach_number.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to <em>Sonic Frontiers</em></p>
+        <p class="prev-next-title">1.2 Mach Number and Compressibility</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="compressible.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.1 Compressible Flows</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
